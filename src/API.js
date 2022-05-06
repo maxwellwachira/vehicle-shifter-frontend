@@ -1,7 +1,8 @@
 //url endpoints
-const baseURL = 'http://localhost:8000/';
+const baseURL = 'https://vehicle-shifter-api.herokuapp.com/';
+//const baseURL = 'http://localhost:8000/';
 const matatusURL = `${baseURL}matatus/`;
-const driversURL = `${baseURL}users/`;
+const userURL = `${baseURL}users/me/`;
 const loginURL = `${baseURL}auth/token`;
 const waitingURL = `${matatusURL}waiting/`;
 const doneURL = `${matatusURL}done/`
