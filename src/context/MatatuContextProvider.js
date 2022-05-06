@@ -15,7 +15,7 @@ let hourString = d.getHours();
 
 export const MatatuContextProvider = ({children}) => {
     const { setLoading, APIResponse, setIndex, setAction, toggleModal } = useAppContext();
-    const { token } = useAuthContext();
+    const { auth, token } = useAuthContext();
     const [matatus, setMatatus] = useState([]);
     const [waitingList, setWaitingList] = useState([]);
     const [doneList, setDoneList] = useState ([]);
@@ -102,16 +102,16 @@ export const MatatuContextProvider = ({children}) => {
 
 
     useEffect(() => {
-        fetchMatatus();
+        if(auth) fetchMatatus();
         fetchWaitingMatatus();
         fetchDoneMatatus();
-    }, [APIResponse]);
+    }, [APIResponse, auth]);
 
 
 
 
   return (
-    <MatatuContext.Provider value={{matatus, dateString, timeString, waitingList, doneList, hourString, editValues, searchTerm, setEditValues, editClick, searchChange,  fetchWaitingMatatus}}>
+    <MatatuContext.Provider value={{matatus, dateString, timeString, waitingList, doneList, hourString, editValues, searchTerm, setEditValues, editClick, searchChange}}>
         {children}
     </MatatuContext.Provider>
   )

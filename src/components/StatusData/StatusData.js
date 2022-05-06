@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 //components
 import NoDataFound from '../NoDataFound/NoDataFound';
 //context
@@ -18,7 +18,7 @@ const StatusData = () => {
    
     const {status, setAPIResponse } = useAppContext();
     const {auth, token} = useAuthContext();
-    const { waitingList, doneList, dateString, timeString} = useMatatuContext();
+    const { waitingList, doneList, dateString, timeString } = useMatatuContext();
 
 
     const removeMatatu = async (reg) => {

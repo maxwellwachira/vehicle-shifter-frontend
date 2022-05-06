@@ -43,8 +43,8 @@ export const AuthContextProvider = ({children}) => {
 
     useEffect(() => {
         readTokenCookie();
-        readUserMe();
-    }, [token]);
+        if(auth)  readUserMe();   
+    }, [auth]);
 
     return (
         <AuthContext.Provider value={{auth, token, userMe, setAuth, setToken, logout}}>
