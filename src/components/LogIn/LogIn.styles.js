@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    margin-top: 30px;
+    margin-top: 60px;
     margin-left: auto;
     margin-right: auto;
     width:38%;
@@ -25,6 +25,7 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
     margin:15px;
+    padding-top: 25px;
 `;
 
 export const ButtonWrapper = styled.div`
