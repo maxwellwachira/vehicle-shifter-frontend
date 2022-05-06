@@ -41,5 +41,5 @@ const apiSettings = {
 
 }
 
-export default apiSettings;
+export default apiSettings; 
 
