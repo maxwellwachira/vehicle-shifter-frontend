@@ -37,7 +37,10 @@ const apiSettings = {
     },
     loginUser: async (loginCredentials) => {
         return await (await fetch(loginURL, {method: 'POST', body: loginCredentials})).json();
-    }
+    },
+    userMe: async (options) => {
+        return await (await fetch(userURL, options)).json();
+    },
 
 }
 

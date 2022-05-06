@@ -22,7 +22,6 @@ export const MatatuContextProvider = ({children}) => {
     const [searchTerm, setSearchTerm] = useState('');
      
 
-    console.log(token);
     const initialValues = {
         reg: "",
         to:"",
@@ -74,10 +73,10 @@ export const MatatuContextProvider = ({children}) => {
         };
 
         try{
-        const matatuData = await API.fetchMatatus(options);
-        setMatatus(matatuData);
+            const matatuData = await API.fetchMatatus(options);
+            setMatatus(matatuData);
         }catch (error) {
-        console.log(error);
+            console.log(error);
         }
         setLoading(false);
     }
