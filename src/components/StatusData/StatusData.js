@@ -1,4 +1,6 @@
 import React from 'react';
+//components
+import NoDataFound from '../NoDataFound/NoDataFound';
 //context
 import { useAppContext } from '../../context/AppContextProvider';
 import { useAuthContext } from '../../context/AuthContextProvider';
@@ -59,13 +61,13 @@ const StatusData = () => {
 
     if (status === 'waiting' && waitingList.length === 0){
         return (
-            <div>No data Found</div>
+            <NoDataFound />
         )
     }
 
     if (status === 'done' && doneList.length === 0){
         return (
-            <div>No data Found</div>
+            <NoDataFound />
         )
     }
 
