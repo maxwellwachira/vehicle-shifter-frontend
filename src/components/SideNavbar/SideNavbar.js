@@ -18,7 +18,7 @@ const SideNavbar = () => {
         <CloseButton onClick={toggleSideNav}>close</CloseButton>
         <LinkItem href='/admin/dashboard' className={page === 'dashboard' ? 'active' : ''}>Dashboard</LinkItem>
         <LinkItem href='/admin/matatus' className={page === 'matatus' ? 'active' : ''}>Matatus</LinkItem>
-        <LinkItem href='/admin/drivers' className={page === 'drivers' ? 'active' : ''}>Drivers</LinkItem>
+        {/* <LinkItem href='/admin/drivers' className={page === 'drivers' ? 'active' : ''}>Drivers</LinkItem> */}
         <LinkItem href='/admin/settings' className={page === 'settings' ? 'active' : ''}>Settings</LinkItem>
         <button onClick={logout} className='signout'>Sign Out</button>
     </SideNav>
