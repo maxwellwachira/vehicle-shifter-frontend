@@ -18,7 +18,7 @@ const VehicleMultiSelect = () => {
 
   const {token} = useAuthContext();
   const {isWaitingOpen, toggleWaiting} = useAppContext();
-  const { matatus } = useMatatuContext();
+  const { matatus, waitingList } = useMatatuContext();
 
   let checkedReg = [];
   let waitingData = [];
@@ -71,6 +71,11 @@ const VehicleMultiSelect = () => {
     toggleWaiting();
     setCheckedState(new Array(matatus.length).fill(false));
   }
+  const findMatatuInWaiting = (reg) =>{
+    const index = waitingList.findIndex (e => e.reg === reg);
+    if (index === -1) return false;
+    return true;
+  }
       
   return (
     
@@ -103,6 +108,7 @@ const VehicleMultiSelect = () => {
                     value={reg}
                     checked={checkedState[index]}
                     onChange={(e) => handleOnChange(e, index)}
+                    disabled={findMatatuInWaiting(reg)}
                   /></td>
                   <td>{reg}</td>
                   <td>{stage}</td>
