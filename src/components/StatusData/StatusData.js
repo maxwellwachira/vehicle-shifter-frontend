@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 //components
 import NoDataFound from '../NoDataFound/NoDataFound';
+import Pagination from '../Pagination/Pagination';
 //context
 import { useAppContext } from '../../context/AppContextProvider';
 import { useAuthContext } from '../../context/AuthContextProvider';
 import { useMatatuContext } from '../../context/MatatuContextProvider';
+//
 //API
 import API from '../../API';
 //styling
@@ -14,12 +16,21 @@ import checkIcon from '../../images/check.icon.svg';
 import crossIcon from '../../images/cancel.png';
 
 
+let PageSize = 10;
+
 const StatusData = () => {
    
     const {status, setAPIResponse } = useAppContext();
     const {auth, token} = useAuthContext();
     const { waitingList, doneList, dateString, timeString } = useMatatuContext();
 
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const currentTableData = useMemo(() => {
+        const firstPageIndex = (currentPage - 1) * PageSize;
+        const lastPageIndex = firstPageIndex + PageSize;
+        return waitingList.slice(firstPageIndex, lastPageIndex);
+      }, [currentPage]);
 
     const removeMatatu = async (reg) => {
         const confirmation = window.confirm(`Are you sure you want to remove ${reg} from waiting List?`);
@@ -74,6 +85,7 @@ const StatusData = () => {
 
 
   return (
+      <>
       <Table>
           <tbody>
             {status === 'waiting' ?
@@ -101,6 +113,15 @@ const StatusData = () => {
                 }
             </tbody>
       </Table>
+
+      <Pagination
+        className="pagination-bar"
+        currentPage={currentPage}
+        totalCount={waitingList.length}
+        pageSize={PageSize}
+        onPageChange={page => setCurrentPage(page)}
+      />
+      </>
    
   );
 }
