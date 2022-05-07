@@ -30,7 +30,7 @@ const StatusData = () => {
         const firstPageIndex = (currentPage - 1) * PageSize;
         const lastPageIndex = firstPageIndex + PageSize;
         return waitingList.slice(firstPageIndex, lastPageIndex);
-      }, [currentPage]);
+      }, [currentPage, waitingList]);
 
     const removeMatatu = async (reg) => {
         const confirmation = window.confirm(`Are you sure you want to remove ${reg} from waiting List?`);
