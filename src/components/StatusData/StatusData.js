@@ -16,11 +16,11 @@ import checkIcon from '../../images/check.icon.svg';
 import crossIcon from '../../images/cancel.png';
 
 
-let PageSize = 10;
+let PageSize = 5;
 
 const StatusData = () => {
    
-    const {status, setAPIResponse } = useAppContext();
+    const {status, setAPIResponse, loading } = useAppContext();
     const {auth, token} = useAuthContext();
     const { waitingList, doneList, dateString, timeString } = useMatatuContext();
 
@@ -70,13 +70,13 @@ const StatusData = () => {
     }
 
 
-    if (status === 'waiting' && waitingList.length === 0){
+    if (status === 'waiting' && waitingList.length === 0 && loading === false){
         return (
             <NoDataFound />
         )
     }
 
-    if (status === 'done' && doneList.length === 0){
+    if (status === 'done' && doneList.length === 0 && loading === false){
         return (
             <NoDataFound />
         )
@@ -89,7 +89,7 @@ const StatusData = () => {
       <Table>
           <tbody>
             {status === 'waiting' ?
-                waitingList.map(({reg, stage, to, driver}, index) => (  
+                currentTableData.map(({reg, stage, to, driver}, index) => (  
                     <TableRow key = {index} className = {index === 0 ? "active" : ""}>
                         <td>{index + 1}.  {reg}</td>
                         <td>{driver}</td>
@@ -115,7 +115,7 @@ const StatusData = () => {
       </Table>
 
       <Pagination
-        className="pagination-bar"
+        className="pagination-container"
         currentPage={currentPage}
         totalCount={waitingList.length}
         pageSize={PageSize}

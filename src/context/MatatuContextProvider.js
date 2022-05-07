@@ -62,8 +62,6 @@ export const MatatuContextProvider = ({children}) => {
     }
 
     const fetchMatatus = async () => {
-        setLoading(true);
-
         const options = {
             method: 'GET',
             headers: {
@@ -78,20 +76,23 @@ export const MatatuContextProvider = ({children}) => {
         }catch (error) {
             console.log(error);
         }
-        setLoading(false);
+        
     }
 
    
     const fetchWaitingMatatus = async () => {
+        
         try {
             const waitingData = await API.fetchWaitingMatatus();
             setWaitingList(waitingData);
         } catch (error){
             console.log(error);
         }
+       
     }
 
     const fetchDoneMatatus = async () => {
+        
         try {
             const doneData = await API.fetchDoneMatatus();
             setDoneList(doneData);
@@ -102,9 +103,11 @@ export const MatatuContextProvider = ({children}) => {
 
 
     useEffect(() => {
+        setLoading(true);
         if(auth) fetchMatatus();
         fetchWaitingMatatus();
         fetchDoneMatatus();
+        setLoading(false);
     }, [APIResponse, auth]);
 
 

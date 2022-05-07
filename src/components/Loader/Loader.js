@@ -8,7 +8,7 @@ const Loader = () => {
 
     return (
         <Wrapper>
-            <img src={Spinner} alt='Loading...'/>
+            <img src={Spinner} alt='Loading...' />
         </Wrapper>
        
     );

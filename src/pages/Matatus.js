@@ -6,7 +6,6 @@ import Card from '../components/Card/Card';
 import { Grid } from '../components/Grid/Grid';
 import Table from '../components/Table/Table';
 import MatatuOption from '../components/MatatuOptions/MatatuOption';
-import Loader from '../components/Loader/Loader';
 import ResponseMessage from '../components/ResponseMessage/ResponseMessage';
 import VehicleMultiSelect from '../components/VehicleMultiSelect/VehicleMultiSelect';
 //Context Provider
@@ -18,7 +17,7 @@ import { useDeleteMatatu } from '../hooks/useDeleteMatatu';
 
 
 const Matatus = () => {
-  const { view, loading, setPage, APIResponse, setAPIResponse } = useAppContext();
+  const { view, setPage, APIResponse, setAPIResponse } = useAppContext();
   const { matatus, editClick } = useMatatuContext();
   const { deleteMatatu } = useDeleteMatatu();
  
@@ -28,7 +27,6 @@ const Matatus = () => {
   }, []);
 
   const responseMessage = () => {
-    //if (matatus.length === 0)  setResponse({message: "No Matatus found"});
     if(APIResponse.length === 0) return;
     if(APIResponse.message === 'success') {
       setTimeout(() => {
@@ -48,12 +46,6 @@ const Matatus = () => {
     )
   }
   
-  if(loading){
-    return (
-      <Loader />
-    );
-  }
-
   if (view === 'table'){
     let rowNumber = 1;
 

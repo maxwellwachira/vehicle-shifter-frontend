@@ -5,9 +5,11 @@ import { ModalProvider } from 'styled-react-modal';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //auth context
 import { useAuthContext } from './context/AuthContextProvider';
+import { useAppContext } from './context/AppContextProvider';
 //components
 import { GlobalStyles } from './GlobalStyles';
 import Header from './components/Header/Header';
+import Loader from './components/Loader/Loader';
 //Pages
 import Home from './pages/Home';
 import AddVehicle from './pages/AddVehicle';
@@ -17,7 +19,15 @@ import AdminDashboard from './pages/AdminDashboard';
 import Matatus from './pages/Matatus';
 
 function App() {
-  const {auth} = useAuthContext();
+  const { auth } = useAuthContext();
+  const { loading } = useAppContext();
+
+  if(loading){
+    return (
+      <Loader />
+    );
+  }
+
   return (
     <ModalProvider>
       <Router>
