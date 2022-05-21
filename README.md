@@ -92,7 +92,7 @@ npm run start
 
 # Acknowledgement
 
-Special thanks to [@skndung'u] (https://github.com/skndungu) for the idea to make the app
+Special thanks to [@skndung'u](https://github.com/skndungu) for the idea to make the app
 
 ## <b>License</b>
 
