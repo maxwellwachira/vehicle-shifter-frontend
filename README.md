@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+<h1 align="center"><b>Vehicle Shifter Frontend</b></h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://github.com/maxwellwachira/vehicle-shifter-frontend.git)
 
-## Available Scripts
+# Description
 
-In the project directory, you can run:
+Public Service Vehicle commonly known as Matatus usually queue to wait for their turn to carry passengers. The Queuing Process is not done in an ordely way. If the drivers are not keen, they might be skipped by other drivers.<br>
+The vehicle shifter app is meant to automate the queuing process. In addition, it can generate reports. The app is made using React JS and FastAPI
 
-### `npm start`
+# Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I have a deployed the application on [Netlify](https://www.netlify.com/)<br>
+click the following link to check my solution [https://vehicle-shifter.netlify.app/](https://vehicle-shifter.netlify.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Table of contents
 
-### `npm test`
+- [Prerequisites](#Prerequisites)
+- [Directory Structure](#Directory-Structure)
+- [Running Locally](#Setting-up-Local-Environment)
+- [Acknowledgement](#Acknowledgement)
+- [License](#License)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Prerequisites
 
-### `npm run build`
+- [Node JS Installed ](https://nodejs.org/en/download/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Directory-Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    bitmama-challenge
+    ├── public
+    |   ├── index.html
+    |	└── favicon.ico
+    ├── src
+    |   ├── components/
+    |   ├── context/
+    |	├── hooks/
+    |   ├── images/
+    |   ├── pages/
+    |   ├── services/
+    |   ├── API.js
+    |   ├── App.js
+    |   ├── GlobalStyles.js
+    |   └── index.js
+    ├── .gitignore
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Setting-up-Local-Environment
 
-### `npm run eject`
+### Step 1
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+clone the repository and navigate to the project directory
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/maxwellwachira/vehicle-shifter-frontend.git
+cd vehicle-shifter-frontend/
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Step 2
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Check package.json file and ensure scripts are notated as below:
 
-## Learn More
+```bash
+"scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Step 3
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Delete the node_modules folder and any 'lock' files such as yarn.lock or package-lock.json if present.
 
-### Code Splitting
+### Step 4
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Run npm install
 
-### Analyzing the Bundle Size
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Step 5
 
-### Making a Progressive Web App
+final step
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm run start
+```
 
-### Advanced Configuration
+# Acknowledgement
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Special thanks to [@skndung'u] (https://github.com/skndungu) for the idea to make the app
 
-### Deployment
+## <b>License</b>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](LICENSE)
