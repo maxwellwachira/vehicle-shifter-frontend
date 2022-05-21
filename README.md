@@ -26,7 +26,7 @@ click the following link to check my solution [https://vehicle-shifter.netlify.a
 
 # Directory-Structure
 
-    bitmama-challenge
+    vehicle-shifter-frontend
     ├── public
     |   ├── index.html
     |	└── favicon.ico
